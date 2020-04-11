@@ -26,7 +26,16 @@ void *thread2()
 	}
 	printf("\nThe Minimum value is:: %d",min);
 }
-
+void *thread3()
+{
+	int max=a[0];
+	for(iter=1;iter<num;iter++)
+	{
+		if(max<a[iter])
+		    max=a[iter]
+	}
+	printf("\nThe Maximum value is:: %d",max);
+}
 
 int main()
 {
@@ -42,5 +51,8 @@ int main()
 	n=pthread_create(&t2,NULL,&thread2,NULL);
 	pthread_join(t2,NULL);
 
+	n=pthread_create(&t3,NULL,&thread3,NULL);
+	pthread_join(t3,NULL);
+	
 	return 0;
 }
